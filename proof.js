@@ -56,10 +56,97 @@ console.log(testArray);
 // Push - Pushes one TO THE END OF THE ARRAY on and returns the length.
 console.log(testArray.push('Nissan'));
 console.log(testArray);
-// For loops
 
+// Sort - Normal sort with numbers will compare UTF-16 length. To sort numbers you should use a function.
+console.log(testArray.sort());
+console.log(testArray.reverse());
+
+
+const array1 = [1, 30, 4, 21, 100000];
+array1.sort();
+console.log(array1);
+
+// Descending 
+function sorterDescending(a, b) {
+    return b-a;
+}
+
+// Ascending 
+function sorterAscending(a, b) {
+    return a-b;
+}
+// b-a to reverse numbers.
+console.log(array1.sort(sorterDescending));
+console.log(array1.sort(sorterAscending));
+
+
+// Find - Finds the first element that meets the criteria
+function condition(element){
+    return element >= 10;
+}
+
+console.log(array1.find(condition))
+
+// For loops - for, for/in, for/of, while/ do/while.
+
+// Start from 1 and count to 10
+for (let i = 1; i <= 10; i++){
+    console.log(i);
+}
+// log each array element.
+for (let i = 0; i < array1.length; i++) {
+    console.log(array1[i]);
+}
+// in Array ( shortcut for array.length basically.)
+for (let i in array1){
+    console.log(i);
+    console.log(array1[i]);
+}
+
+// For each
+function readData(value, index, array){
+    console.log(`index: ${index} value: ${value}`);
+}
+array1.forEach(readData);
+    // alt with inline function.
+array1.forEach(value => console.log(`Alt ${value}`))
+
+// OF function. I like this one.
+for(let i of array1){
+    console.log(i)
+}
 
 // Objects
+let cars = [
+    {
+        type: 'BMW',
+        model: '325ci'
+    },
+    {
+        type: 'Jag',
+        model: 'XJL'
+    }
 
+]
+
+for(let i of cars){
+    console.log(i.type);
+}
 
 // math operators
+    // Exponentiation 
+console.log(5**2);
+
+    // Modulus
+console.log(2%3)
+
+function calc(a){
+    if(a%2 == 0) {
+        return "Even number";
+    } else {
+        return "Odd Number";
+    }
+}
+console.log(calc(3))
+
+console.log(Object.keys(cars[0]));
